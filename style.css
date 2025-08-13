@@ -1,0 +1,100 @@
+body {
+    background-color: #000;
+    color: #E0E0E0;
+    font-family: 'Special Elite', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 900px;
+    height: 600px;
+    max-width: 95%;
+    border: 2px solid #333;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+#status-bar {
+    text-align: center;
+    padding: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 1.8em;
+    color: #FF4136;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+#sprite-display {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+#ui-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0));
+}
+
+#story-text {
+    padding: 15px;
+    font-size: 1.5em;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px #000;
+    min-height: 100px;
+}
+
+#choices {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choice-btn {
+    background-color: rgba(51, 51, 51, 0.7);
+    border: 1px solid #666;
+    color: #E0E0E0;
+    padding: 15px 25px;
+    font-family: 'Special Elite', cursive;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 0 5px #000;
+}
+
+.choice-btn:hover {
+    background-color: #DDD;
+    color: #000;
+}
+
+.glitch {
+    animation: glitch-animation 0.5s infinite steps(1);
+}
+
+@keyframes glitch-animation {
+  0% { filter: hue-rotate(0deg) brightness(1); transform: translate(0,0); }
+  10% { filter: hue-rotate(0deg) brightness(1.5); transform: translate(5px,-5px); }
+  20% { filter: hue-rotate(0deg) brightness(1); transform: translate(-5px,5px); }
+  30% { filter: hue-rotate(90deg) brightness(1.5); transform: translate(5px,5px); }
+  40% { filter: hue-rotate(0deg) brightness(0.8); transform: translate(-5px,-5px); }
+  50% { filter: hue-rotate(0deg) brightness(1); transform: translate(0,0); }
+  100% { filter: hue-rotate(0deg) brightness(1); transform: translate(0,0); }
+}
